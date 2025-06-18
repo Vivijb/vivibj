@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0N3WWWQ7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V0N3WWWQ7V');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; frame-src *; connect-src *;">
-  <meta name="description" content="Banca Feiticeira.Vip - Melhor banca do Brasil!">
-  <meta name="keywords" content="Acertos Club, Águia Oficial, Feiticeira Vip, apostas online, bancaaguiaoficial">
+  <meta name="description" content="Banca Águia Oficial - Melhor banca do Brasil!">
+  <meta name="keywords" content="Acertos Club, Águia Oficial, Brazz Club, Feiticeira Vip, apostas online">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Feiticeira.Vip - Banca Online">
-  <meta property="og:description" content="Melhores bancas online: Acertos Club, Águia Oficial, Feiticeira Vip!, bancaaguiaoficial">
-  <meta property="og:url" content="https://bancafeiticeiravip.com">
+  <meta property="og:title" content="Águia Oficial - Banca Online">
+  <meta property="og:description" content="Melhores bancas online: Acertos Club, Águia Oficial, Brazz Club, Feiticeira Vip!">
+  <meta property="og:url" content="https://bancaaguiaoficial.com.br">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://bancafeiticeiravip.com/og-image.jpg">
-  <title>Banca Aguia Oficial - Melhor Banca do Brasil</title>
-  <link rel="icon" href="feiticeira.png" type="image/png">
+  <meta property="og:image" content="https://bancaaguiaoficial.com.br/og-image.jpg">
+  <title>Águia Oficial - Melhor Banca do Brasil</title>
+  <link rel="icon" href="aguia.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
@@ -28,15 +37,15 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      color: #e7dcdc;
+      color: #1a1a1a;
       overflow-x: hidden;
     }
     header {
-      background: linear-gradient(135deg, #328f0e, #041401);
+      background: linear-gradient(135deg, #00a143, #00a143);
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      box-shadow: 0 4px 10px rgba(223, 13, 13, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       height: 50px;
       position: fixed;
       top: 0;
@@ -54,7 +63,7 @@
     header h1 {
       font-size: 18px;
       font-weight: 600;
-      color: #f3eaead5;
+      color: #fff;
       letter-spacing: 1px;
     }
     #main-content {
@@ -65,7 +74,7 @@
       display: flex;
       flex-direction: column;
     }
-    #acertos, #aguia, #feiticeira, #palpites-container, #suporte {
+    #acertos, #aguia, #brazz, #feiticeira, #palpites-container, #suporte {
       width: 100%;
       height: 100%;
       transition: opacity 0.5s ease-in-out, transform 0.3s ease;
@@ -96,11 +105,11 @@
       border-radius: 10px;
     }
     footer {
-      background: linear-gradient(135deg, #0ecf07, #00500b);
+      background: linear-gradient(135deg, #00a143, #00a143);
       display: flex;
       flex-direction: column;
       padding: 10px;
-      border-top: 2px solid #d4d9df;
+      border-top: 2px solid #e0e6ec;
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -125,7 +134,7 @@
       gap: 4px;
     }
     footer button {
-      background: rgba(126, 87, 87, 0.1);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.3);
       font-size: 14px;
       font-weight: 500;
@@ -145,7 +154,7 @@
       overflow: hidden;
     }
     footer button.selected {
-      background: rgba(240, 238, 238, 0.3);
+      background: rgba(255, 255, 255, 0.3);
       font-weight: 600;
     }
     footer button img {
@@ -192,7 +201,7 @@
       transition: background 0.2s, transform 0.1s;
     }
     button:not(footer button):hover {
-      background: #180d01;
+      background: #d97706;
     }
     button:not(footer button):active {
       transform: scale(0.98);
@@ -248,7 +257,7 @@
       margin-bottom: 12px;
     }
     h3 {
-      color: #010a1a;
+      color: #374151;
       font-size: 16px;
       font-weight: 500;
       margin-bottom: 10px;
@@ -256,7 +265,7 @@
     p {
       font-size: 14px;
       margin-bottom: 10px;
-      color: #f1f3f7;
+      color: #4a5b76;
     }
     ul {
       list-style: disc;
@@ -304,7 +313,7 @@
     }
     .loading {
       font-size: 14px;
-      color: #44db09;
+      color: #374151;
       margin: 10px 0;
       display: flex;
       align-items: center;
@@ -386,18 +395,21 @@
 </head>
 <body>
   <header>
-    <img src="AGUIA.png" alt=>
-    <h1>BANCA ÁGUIA OFICIAL</h1>
+    <img src="aguia.png" alt="ZooGames Logo">
+    <h1>ÁGUIA OFICIAL</h1>
   </header>
 
   <div id="main-content">
     <div id="acertos" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.acertos.club/pr/CRTgB0ZV" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.acertos.club/pr/JcsF2PpU" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
-    <div id="aguia" class="hidden">
+    <div id="aguia">
       <iframe allow="clipboard-read; clipboard-write" src="https://app.aguiaoficial.com/pr/ZXbjMC6Q" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
-    <div id="feiticeira">
+    <div id="brazz" class="hidden">
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.brazz.club/pr/oC7VMz8A" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+    </div>
+    <div id="feiticeira" class="hidden">
       <iframe allow="clipboard-read; clipboard-write" src="https://app.feiticeira.vip/pr/2iCVbLKr" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
     <div id="palpites-container" class="hidden">
@@ -437,11 +449,15 @@
         <img src="acertos.png" alt="Acertos Club">
         Acertos Club
       </button>
-      <button onclick="mostrar('aguia')">
+      <button onclick="mostrar('aguia')" class="selected">
         <img src="aguia.png" alt="Águia Oficial">
         Águia Oficial
       </button>
-      <button onclick="mostrar('feiticeira')" class="selected">
+      <button onclick="mostrar('brazz')">
+        <img src="brazz.png" alt="Brazz Club">
+        Brazz Club
+      </button>
+      <button onclick="mostrar('feiticeira')">
         <img src="feiticeira.png" alt="Feiticeira Vip">
         Feiticeira Vip
       </button>
@@ -547,7 +563,7 @@
         'Borboleta': ['Gato', 'Cobra', 'Coelho'],
         'Cachorro': ['Galo', 'Camelo', 'Macaco'],
         'Cabra': ['Vaca', 'Carneiro', 'Touro'],
-        'Carneiro': ['vaca', 'Vaca', 'Touro'],
+        'Carneiro': ['Cabra', 'Vaca', 'Touro'],
         'Camelo': ['Cachorro', 'Urso', 'Avestruz'],
         'Cobra': ['Borboleta', 'Jacaré', 'Gato'],
         'Coelho': ['Borboleta', 'Gato', 'Cobra'],
@@ -573,14 +589,15 @@
         try {
           const acertos = document.getElementById('acertos');
           const aguia = document.getElementById('aguia');
+          const brazz = document.getElementById('brazz');
           const feiticeira = document.getElementById('feiticeira');
           const palpitesContainer = document.getElementById('palpites-container');
           const suporte = document.getElementById('suporte');
           const palpites = document.getElementById('palpites');
           const suporteContent = document.getElementById('suporte-content');
 
-          if (!acertos || !aguia || !feiticeira || !palpitesContainer || !suporte || !palpites || !suporteContent) {
-            console.error('Um ou mais elementos principais não encontrados:', { acertos, aguia, feiticeira, palpitesContainer, suporte, palpites, suporteContent });
+          if (!acertos || !aguia || !brazz || !feiticeira || !palpitesContainer || !suporte || !palpites || !suporteContent) {
+            console.error('Um ou mais elementos principais não encontrados:', { acertos, aguia, brazz, feiticeira, palpitesContainer, suporte, palpites, suporteContent });
             document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
             return;
           }
@@ -592,6 +609,7 @@
 
           acertos.style.display = id === 'acertos' ? 'block' : 'none';
           aguia.style.display = id === 'aguia' ? 'block' : 'none';
+          brazz.style.display = id === 'brazz' ? 'block' : 'none';
           feiticeira.style.display = id === 'feiticeira' ? 'block' : 'none';
           palpitesContainer.style.display = id === 'palpites' ? 'block' : 'none';
           suporte.style.display = 'none';
