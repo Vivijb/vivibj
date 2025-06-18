@@ -230,7 +230,7 @@
       background: #f9fafb;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: all 0.2s;
+      transition: transform 0.2s;
     }
     .section:hover {
       transform: translateY(-2px);
@@ -315,7 +315,8 @@
       font-size: 14px;
       color: #374151;
       margin: 10px 0;
-      display: flex: justify-content;
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
       gap: 8px;
     }
@@ -331,7 +332,7 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       header {
         padding: 8px 12px;
       }
@@ -402,34 +403,34 @@
   <div id="main-content">
     <div id="acertos" class="hidden">
       <iframe 
-        allow="https://app.acertos.org clipboard-read; clipboard-write;" 
-        src="https://app.acertos.club/pr?id=JcsF2PpU" 
+        allow="clipboard-read; clipboard-write" 
+        src="https://app.acertos.org/?id=JcsF2PpU" 
         loading="lazy" 
-        sandbox="allow-same-origin allow-scripts allow-popups allow-clipboard-read allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
       ></iframe>
     </div>
     <div id="aguia">
       <iframe 
-        allow="https://app.aguia.co clipboard-read; clipboard-write;" 
-        src="https://app.aguiaoficial.com/pr?id=Z0N" 
+        allow="clipboard-read; clipboard-write" 
+        src="https://app.aguia.co/?id=Z0N" 
         loading="lazy" 
-        sandbox="allow-same-origin allow-scripts allow-popups allow-clipboard-read allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
       ></iframe>
     </div>
     <div id="brazz" class="hidden">
       <iframe 
-        allow="https://app.brazz.club clipboard-read; clipboard-write;" 
-        src="https://app.brazz.club/pr?id=ocC3" 
+        allow="clipboard-read; clipboard-write" 
+        src="https://app.brazz.club/?id=ocC3" 
         loading="lazy" 
-        sandbox="allow-same-origin allow-scripts allow-popups allow-clipboard-read allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
       ></iframe>
     </div>
     <div id="feiticeira" class="hidden">
       <iframe 
-        allow="https://app.feiticeira.bz clipboard-read; clipboard-write;" 
-        src="https://app.feiticeira.vip/pr?id=2" 
+        allow="clipboard-read; clipboard-write" 
+        src="https://app.feiticeira.bz/?id=2" 
         loading="lazy" 
-        sandbox="allow-same-origin allow-scripts allow-popups; clipboard-write;"
+        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
       ></iframe>
     </div>
     <div id="palpites-container" class="hidden">
@@ -442,7 +443,7 @@
             <option value="PT Rio">PT Rio</option>
             <option value="Globo GO">Globo GO</option>
             <option value="Nacional">Nacional</option>
-            <option value="Maluca BA">Maluca</option>
+            <option value="Maluca">Maluca</option>
             <option value="Lotep">Lotep</option>
           </select>
           <button id="gerarPalpites" disabled="disabled">Gerar Palpites</button>
@@ -454,13 +455,13 @@
           <select id="animalSelect">
             <option value="">Selecione um animal...</option>
           </select>
-          <button id="verPuxBtn" class="hidden">Ver Puxadas</button>
+          <button id="verPuxada" class="hidden">Ver Puxadas</button>
           <div class="puxadas" id="puxadaResult"></div>
         </div>
       </div>
     </div>
     <div id="suporte" class="hidden">
-      <div id="suporteContent"></div>
+      <div id="suporte-content"></div>
     </div>
   </div>
   <footer>
@@ -497,26 +498,26 @@
     try {
       const animals = [
         {name:'Avestruz',emoji:'🦜',group:1,tens:['01','02','03','04','05']},
-        {name:'Águia',emoji:'🦅',group:2,tiles:['06','07','08','09','10']},
-        {name:'Burro',emoji:'🦙',group:3,tiles:['11','12','13','14','15']},
-        {name:'Borboleta',emoji:'🦋',group:4,tiles:['16','17','18','19','20']},
-        {name:'Cachorro',emoji:'🐶',group:5,tiles:['21','22','23','24','1','25']},
-        {name:'Cabra',emoji:'🐐',group:6,ttiles:['26','27','28','1','29']},
-        {name:'Carneiro',emoji:'🐑',group:7,ttiles:['30','31','1','32','33']},
-        {name:'Camelo',emoji:'🐫',group:8,ttiles:['34','35','1','36','37']},
-        {name:'Cobra',emoji:'🐍',group:9,ttiles:['38','39','40','41','1']},
-        {name:'Coelho',emoji:'🐰',group:10,ttiles:['42','43','44','1','45']},
-        {name:'Cavalo',emoji:'🐎',group:11,ttiles:['46','47','48','1','2']},
-        {name:'Elefante',emoji:'🐘',group:12,ttiles:['49','50','51','2','3']},
-        {name:'Galo',emoji:'🐓',group:13,ttiles:['52','53','54','2','55']},
-        {name:'Gato',emoji:'🐱',group:14,ttiles:['56','57','58','2','59']},
-        {name:'Jacaré',emoji:'🐊',group:15,ttiles:['60','61','2','62','63']},
-        {name:'Leão',emoji:'🦁',group:16,ttiles:['64','65','2','66','67']},
-        {name:'Macaco',emoji:'🐒',group:17,ttiles:['68','69','2','71','72']},
-        {name:'Porco',emoji:'🐷',group:18,ttiles:['70','73','74','75','2']},
-        {name:'Pavão',emoji:'🦚',group:19,ttiles:['76','77','2','78','79']},
-        {name:'Peru',emoji:'🦃',group:20,ttiles:['80','81','82','1','2','3']},
-        {name:'Vaca',emoji:'🐄',group:25,ttiles:['97','98','99','00','1','2','3','4']},
+        {name:'Águia',emoji:'🦅',group:2,tens:['06','07','08','09','10']},
+        {name:'Burro',emoji:'🦙',group:3,tens:['11','12','13','14','15']},
+        {name:'Borboleta',emoji:'🦋',group:4,tens:['16','17','18','19','20']},
+        {name:'Cachorro',emoji:'🐶',group:5,tens:['21','22','23','24','25']},
+        {name:'Cabra',emoji:'🐐',group:6,tens:['26','27','28','29']},
+        {name:'Carneiro',emoji:'🐑',group:7,tens:['30','31','32','33']},
+        {name:'Camelo',emoji:'🐫',group:8,tens:['34','35','36','37']},
+        {name:'Cobra',emoji:'🐍',group:9,tens:['38','39','40','41']},
+        {name:'Coelho',emoji:'🐰',group:10,tens:['42','43','44','45']},
+        {name:'Cavalo',emoji:'🐎',group:11,tens:['46','47','48','49']},
+        {name:'Elefante',emoji:'🐘',group:12,tens:['50','51','52','53']},
+        {name:'Galo',emoji:'🐓',group:13,tens:['54','55','56','57']},
+        {name:'Gato',emoji:'🐱',group:14,tens:['58','59','60','61']},
+        {name:'Jacaré',emoji:'🐊',group:15,tens:['62','63','64','65']},
+        {name:'Leão',emoji:'🦁',group:16,tens:['66','67','68','69']},
+        {name:'Macaco',emoji:'🐒',group:17,tens:['70','71','72','73']},
+        {name:'Porco',emoji:'🐷',group:18,tens:['74','75','76','77']},
+        {name:'Pavão',emoji:'🦚',group:19,tens:['78','79','80','81']},
+        {name:'Peru',emoji:'🦃',group:20,tens:['82','83','84','85']},
+        {name:'Vaca',emoji:'🐄',group:25,tens:['97','98','99','00']},
       ];
 
       const bets = {
@@ -615,7 +616,7 @@
           const palpitesContainer = document.getElementById('palpites-container');
           const suporte = document.getElementById('suporte');
           const palpites = document.getElementById('palpites');
-          const suporteContent = document.getElementById('suporteContent');
+          const suporteContent = document.getElementById('suporte-content');
 
           if (!acertos || !aguia || !brazz || !feiticeira || !palpitesContainer || !suporte || !palpites || !suporteContent) {
             console.error('Missing elements:', { acertos, aguia, brazz, feiticeira, palpitesContainer, suporte, palpites, suporteContent });
@@ -824,7 +825,7 @@
         console.log('handlePulls: Starting');
         try {
           const select = document.getElementById('animalSelect');
-          const verPuxada = document.getElementById('verPuxBtn');
+          const verPuxada = document.getElementById('verPuxada');
           const puxadaResult = document.getElementById('puxadaResult');
 
           if (!select || !verPuxada || !puxadaResult) {
@@ -859,7 +860,7 @@
           console.error('Error in handlePulls:', e);
           const puxadaResult = document.getElementById('puxadaResult');
           if (puxadaResult) {
-            puxadaResult.innerHTML = '<p class="error">Error loading pulls. Contact support: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+            puxadaResult.innerHTML = '<p class="error">Error loading pulls. Contact support: supporta href="https://wa.me/5583994073892">WhatsApp</a></p>';
           }
         }
       }
