@@ -404,33 +404,33 @@
     <div id="acertos" class="hidden">
       <iframe 
         allow="clipboard-read; clipboard-write" 
-        src="https://app.acertos.club/pr/JcsF2PpU" 
+        src="https://app.acertos.org/?id=JcsF2PpU" 
         loading="lazy" 
-        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin"
       ></iframe>
     </div>
     <div id="aguia">
       <iframe 
         allow="clipboard-read; clipboard-write" 
-        src="https://app.aguiaoficial.com/pr/ZXbjMC6Q" 
+        src="https://app.aguia.co/?id=Z0N" 
         loading="lazy" 
-        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin"
       ></iframe>
     </div>
     <div id="brazz" class="hidden">
       <iframe 
         allow="clipboard-read; clipboard-write" 
-        src="https://app.brazz.club/pr/oC7VMz8A" 
+        src="https://app.brazz.club/?id=ocC3" 
         loading="lazy" 
-        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin"
       ></iframe>
     </div>
     <div id="feiticeira" class="hidden">
       <iframe 
         allow="clipboard-read; clipboard-write" 
-        src="https://app.feiticeira.vip/pr/2iCVbLKr" 
+        src="https://app.feiticeira.bz/?id=2" 
         loading="lazy" 
-        sandbox="allow-scripts allow-same-origin allow-clipboard-write"
+        sandbox="allow-scripts allow-same-origin"
       ></iframe>
     </div>
     <div id="palpites-container" class="hidden">
@@ -860,7 +860,7 @@
           console.error('Error in handlePulls:', e);
           const puxadaResult = document.getElementById('puxadaResult');
           if (puxadaResult) {
-            puxadaResult.innerHTML = '<p class="error">Error loading pulls. Contact support: supporta href="https://wa.me/5583994073892">WhatsApp</a></p>';
+            puxadaResult.innerHTML = '<p class="error">Error loading pulls. Contact support: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
           }
         }
       }
@@ -896,12 +896,14 @@
           document.body.innerHTML = '<p class="error">Error loading page. Contact support: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
         }
 
-        if ('serviceWorker' in navigator) {
+        if (navigator && 'serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(registrations => {
             for (let registration of registrations) {
               registration.unregister().catch(e => console.warn('Error unregistering service worker:', e));
             }
           }).catch(e => console.warn('Error getting service worker registrations:', e));
+        } else {
+          console.warn('ServiceWorker API not available');
         }
       });
     } catch (e) {
